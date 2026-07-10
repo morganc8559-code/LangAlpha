@@ -14,10 +14,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--results", required=True)
     parser.add_argument("--scheme", default="bracket_1.5atr_2R_24h")
+    parser.add_argument("--trades", default="trades.parquet")
+    parser.add_argument("--tag", default="")
     args = parser.parse_args()
 
     out_dir = Path(args.results)
-    trades = pd.read_parquet(out_dir / "trades.parquet")
+    trades = pd.read_parquet(out_dir / args.trades)
     trades = trades[trades["scheme"] == args.scheme].copy()
     trades["entry_ts"] = pd.to_datetime(trades["entry_ts"])
 
@@ -35,7 +37,7 @@ def main() -> None:
         ax.grid(alpha=0.3)
     fig.autofmt_xdate()
     fig.tight_layout()
-    out = out_dir / f"cumulative_r_{args.scheme}.png"
+    out = out_dir / f"cumulative_r_{args.tag}{args.scheme}.png"
     fig.savefig(out, dpi=130)
     print(f"wrote {out}")
 

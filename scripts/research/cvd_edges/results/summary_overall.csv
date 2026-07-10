@@ -1,0 +1,9 @@
+edge,scheme,trades,avg_r,win_rate,t_stat
+divergence,bracket_1.5atr_2R_24h,4208,-0.0141,0.3878,-0.6251
+divergence,bracket_1atr_2R_8h,4208,-0.1277,0.3805,-5.6789
+divergence,horizon_24h,4208,0.5992,0.5126,4.085
+divergence,horizon_4h,4208,0.0817,0.4724,1.4552
+momentum,bracket_1.5atr_2R_24h,6410,-0.0103,0.3928,-0.5615
+momentum,bracket_1atr_2R_8h,6410,-0.1959,0.3626,-10.8205
+momentum,horizon_24h,6410,1.0356,0.5073,7.1714
+momentum,horizon_4h,6410,0.1676,0.4654,3.034
